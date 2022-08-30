@@ -200,7 +200,14 @@
   <div class="right-bar">
     <div class="top-part">
     <% if user_signed_in? %>
-         <%= link_to " Log out", destroy_user_session_path, data: {turbo_method: :delete}, class:"fa-solid fa-right-from-bracket text-decoration-none link-dark" %>
+      <div>
+        <%= link_to "#" do %>
+          <i class="fa-solid fa-user-group fa-lg mx-3"></i>
+        <% end %>
+      </div>
+      <div class="mx-3">
+        <%= link_to " Log out", destroy_user_session_path, data: {turbo_method: :delete}, class:"fa-solid fa-right-from-bracket text-decoration-none link-dark" %>
+      </div>
         <% else %>
           <%= link_to" Log in", new_user_session_path, class: "fa-solid fa-right-to-bracket text-decoration-none link-dark"%>
         <% end %>
