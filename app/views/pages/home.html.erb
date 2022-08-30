@@ -201,7 +201,7 @@
     <div class="top-part">
     <% if user_signed_in? %>
       <div>
-        <%= link_to "#" do %>
+        <%= link_to user_path(current_user) do %>
           <i class="fa-solid fa-user-group fa-lg mx-3"></i>
         <% end %>
       </div>
