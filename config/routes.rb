@@ -7,15 +7,11 @@ Rails.application.routes.draw do
   end
 
   resources :spaces do
-    resources :tasks do
-      resources :chores do
-        resources :expenses do
-          resources :bills do
-            resources :shopping_lists
-          end
-        end
-      end
-    end
+    resources :tasks
+    resources :chores
+    resources :expenses
+    resources :bills, only: [:new, :create]
+    resources :shopping_lists
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
