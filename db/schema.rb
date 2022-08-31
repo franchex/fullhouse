@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_30_224609) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_31_203832) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,6 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_224609) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "amount"
+    t.string "category"
     t.index ["space_id"], name: "index_bills_on_space_id"
     t.index ["user_id"], name: "index_bills_on_user_id"
   end
@@ -43,6 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_224609) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category"
     t.index ["space_id"], name: "index_chores_on_space_id"
     t.index ["user_id"], name: "index_chores_on_user_id"
   end

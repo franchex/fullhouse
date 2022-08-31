@@ -3,6 +3,10 @@ class BillsController < ApplicationController
     @bill = Bill.find(params[:id])
   end
 
+  def new
+    @bill = Bill.new
+  end
+
   def create
     @bill = Bill.new(params[bill_params])
     @bill.save

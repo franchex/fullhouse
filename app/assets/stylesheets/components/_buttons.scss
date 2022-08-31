@@ -17,12 +17,7 @@ button{
   box-shadow: 0 0 0 #BEE3F8;
   transform: translateY(0);
 }
-button:first-of-type{
-  border-radius: .5em 0 0 .5em;
-}
-button:last-of-type{
-  border-radius: 0 .5em .5em 0;
-}
+
 button i{
   color: #A0AEC0;
   margin-right: .3em;

@@ -26,8 +26,10 @@
         <label class="category" for="opt-4">Shopping list</label>
       </div>
     </div>
-    <%= render "chores/chores" %>
-    <%= render "bills/bills" %>
+    <%# <%= render "chores/chores" %>
+    <% if user_signed_in? %>
+       <%= render "bills/bills" %>
+    <% end %>
      <div class="tasks-wrapper">
       <div class="task">
         <input class="task-item" name="task" type="checkbox" id="item-1" checked>
