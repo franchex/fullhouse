@@ -15,7 +15,7 @@ class ChoresController < ApplicationController
     @space = Space.find(params[:space_id])
     @chore = Chore.new(chore_params)
 
-    raise
+
     @chore.space = @space
     if @chore.save
       redirect_to root_path
