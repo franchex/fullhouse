@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :assignments
-  has_many :spaces, through: :assignment
+  has_many :spaces, through: :assignments
   has_many :tasks
   has_many :chores
   has_many :bills

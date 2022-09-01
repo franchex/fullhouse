@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     resources :assignments, only: [:new, :create]
+    resources :spaces, only: [:show ,:new, :create]
   end
 
-  resources :spaces do
+  resources :spaces, except: [:show ,:new, :create] do
     resources :tasks
     resources :chores
     resources :expenses
