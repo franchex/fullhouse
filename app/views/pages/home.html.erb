@@ -26,9 +26,9 @@
         <label class="category" for="opt-4">Shopping list</label>
       </div>
     </div>
-    <%# <%= render "chores/chores" %>
+    <%= render "chores/chores", chores_categories: @chores_categories %>
     <% if user_signed_in? %>
-       <%= render "bills/bills" %>
+       <%#= render "bills/bills" %>
     <% end %>
      <div class="tasks-wrapper">
       <div class="task">
