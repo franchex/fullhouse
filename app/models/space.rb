@@ -1,6 +1,6 @@
 class Space < ApplicationRecord
   has_many :assignments
-  has_many :users, through: :assignment
+  has_many :users, through: :assignments
   has_many :tasks
   has_many :chores
   has_many :expenses

@@ -8,9 +8,16 @@ class BillsController < ApplicationController
   end
 
   def create
-    @bill = Bill.new(params[bill_params])
-    @bill.save
-    redirect_to root_path
+    @bill = Bill.new(space_params)
+    @assignment = Assignment.new
+    @assignment.user = current_user
+    @assignment.space = @space
+    if @space.save
+      @assignment.save
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def update
