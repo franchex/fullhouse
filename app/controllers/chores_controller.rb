@@ -13,11 +13,15 @@ class ChoresController < ApplicationController
 
   def create
     @space = Space.find(params[:space_id])
-    @chore = Chore.new(params[chore_params])
+    @chore = Chore.new(chore_params)
+
+    raise
     @chore.space = @space
-    @chore.user = current_user
-    @chore.save
-    redirect_to root_path
+    if @chore.save
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def update
@@ -38,7 +42,7 @@ class ChoresController < ApplicationController
   private
 
   def chore_params
-    params.require(:chore).permit(:name, :due_date)
+    params.require(:chore).permit(:name, :due_date, :category, :description, :user_id)
   end
 
 end
