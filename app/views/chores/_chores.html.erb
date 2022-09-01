@@ -1,8 +1,26 @@
 <div class="multi-button">
-  <button><i class="fa-solid fa-toilet"></i> Bathroom</button>
-  <button><i class="fa-solid fa-utensils"></i> Dishes</button>
-  <button><i class="fa-solid fa-broom"></i>Sweep</button>
-  <button><i class="fa-solid fa-kitchen-set"></i> Kitchen</button>
-  <button><i class="fa-solid fa-trash-can"></i> Trash</button>
-  <button><i class="fa-solid fa-washing-machine"></i> Washer</button> <!--icon is not displaying for some reason-->
+  <%= link_to new_space_chore_path(current_user.spaces.first, category: "Bathroom") do %>
+    <button><i class="fa-solid fa-toilet"></i> Bathroom</button>
+  <% end %>
+
+  <%= link_to new_space_chore_path(current_user.spaces.first, category: "Dishes") do %>
+    <button><i class="fa-solid fa-utensils"></i> Dishes</button>
+  <% end %>
+
+  <%= link_to new_space_chore_path(current_user.spaces.first, category: "Sweep") do %>
+   <button><i class="fa-solid fa-broom"></i>Sweep</button>
+  <% end %>
+
+  <%= link_to new_space_chore_path(current_user.spaces.first, category: "Kitchen") do %>
+   <button><i class="fa-solid fa-kitchen-set"></i> Kitchen</button>
+  <% end %>
+
+  <%= link_to new_space_chore_path(current_user.spaces.first, category: "Washer") do %>
+   <button><i class="fa-solid fa-soap"></i> Washer</button>
+  <% end %>
+
+  <%= link_to new_space_chore_path(current_user.spaces.first) do %>
+   <button><i class="fa-solid fa-plus"></i>Add</button>
+  <% end %>
+
 </div>
