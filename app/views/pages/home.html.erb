@@ -3,7 +3,7 @@
      <%= render "pages/sidebar" %>
   </div>
   <div class="page-content">
-    <%= render "pages/page_content" %>
+    <%= render "pages/page_content", space: current_user.spaces.first %>
     <%= render "chores/chores" %>
     <% if user_signed_in? %>
        <%= render "bills/bills" %>
