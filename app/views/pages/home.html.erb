@@ -27,6 +27,10 @@
         <label class="category" for="opt-4">Shopping list</label>
       </div>
     </div>
+
+    <% if user_signed_in? %>
+       <%= render "shopping_lists/shopping_lists" %>
+
     <%= render "chores/chores", chores_categories: @chores_categories %>
 
     <%= render "pages/page_content" %>
@@ -34,6 +38,7 @@
 
     <% if user_signed_in? %>
        <%#= render "bills/bills" %>
+
     <% end %>
      <div class="tasks-wrapper">
       <div class="task">

@@ -3,11 +3,6 @@ class ShoppingListsController < ApplicationController
     @shoppinglist = ShoppingList.find(params[:id])
   end
 
-  def create
-    @shoppinglist = ShoppingList.new(params[shoppinglist_params])
-    @shoppinglist.save
-    redirect_to root_path
-  end
 
   def update
     @shoppinglist = ShoppingList.find(params[:id])
