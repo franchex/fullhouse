@@ -1,9 +1,23 @@
 <div class="multi-button mt-2">
-  <a href=<%= user_path(current_user) %>><button><i class="fa-solid fa-lightbulb"></i> Electricity</button></a>
-  <a href=<%= user_path(current_user) %>><button><i class="fa-solid fa-trash-can"></i> Waste</button></a>
-  <a href=<%= user_path(current_user) %>><button><i class="fa-solid fa-phone"></i> Phone</button></a>
-  <a href=<%= user_path(current_user) %>><button><i class="fa-solid fa-fire"></i> Gas</button></a>
-  <a href=<%= user_path(current_user) %>><button><i class="fa-solid fa-wifi"></i> Internet</button></a>
-  <a href=<%= user_path(current_user) %>><button><i class="fa-solid fa-house"></i> Rent</button></a>
-  <a href=<%= user_path(current_user) %>><button><i class="fa-solid fa-plus"></i> Add</button></a>
+  <%= link_to new_user_space_path(current_user) do %>
+      <button><i class="fa-solid fa-lightbulb"></i>Electricity</button>
+  <% end %>
+  <%= link_to new_user_space_path(current_user) do %>
+      <button><i class="fa-solid fa-trash-can"></i>Waste</button>
+  <% end %>
+  <%= link_to new_user_space_path(current_user) do %>
+      <button><i class="fa-solid fa-phone"></i>Phone</button>
+  <% end %>
+  <%= link_to new_user_space_path(current_user) do %>
+      <button><i class="fa-solid fa-fire"></i>Gas</button>
+  <% end %>
+  <%= link_to new_user_space_path(current_user) do %>
+      <button><i class="fa-solid fa-wifi"></i>Internet</button>
+  <% end %>
+  <%= link_to new_user_space_path(current_user) do %>
+      <button><i class="fa-solid fa-house"></i>Rent</button>
+  <% end %>
+  <%= link_to new_user_space_path(current_user) do %>
+      <button><i class="fa-solid fa-plus"></i>Add</button>
+  <% end %>
 </div>
