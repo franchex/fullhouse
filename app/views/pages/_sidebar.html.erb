@@ -1,15 +1,21 @@
 <div class="left-content">
-  <% if user_signed_in? %>
-    <div class="d-flex justify-content-center">
-      <%= link_to user_path(current_user) do %>
-        <i class="fa-solid fa-user-group fa-lg mx-3"></i>
+  <div class="multi-button">
+    <% if user_signed_in? %>
+      <div class="multi-button text-center mb-3">
+        <a href=<%= user_path(current_user) %>><button><i class="fa-solid fa-user-group"></i> profile</button></a>
+      </div>
+      <div class="multi-button text-center mb-3">
+      <%= link_to new_user_space_path(current_user) do %>
+        <button><i class="fa-solid fa-building-user"></i> Space</button>
       <% end %>
+      </div>
+      <div class="multi-button text-center mb-3">
+        <a href="<%= destroy_user_session_path %>" data-turbo-method="delete"><button><i class="fa-solid fa-right-from-bracket"></i> Log out</button></a>
+      </div>
+      <% else %>
+      <div class="multi-button text-center mb-3">
+        <a href="<%= new_user_session_path %>"><button><i class="fa-solid fa-right-to-bracket"></i> Log in</button></a>
+      </div>
+        <% end %>
     </div>
-    <br>
-    <div class="mx-3 d-flex justify-content-center">
-      <%= link_to " Log out", destroy_user_session_path, data: {turbo_method: :delete}, class:"fa-solid fa-right-from-bracket text-decoration-none link-dark" %>
-    </div>
-  <% else %>
-    <%= link_to" Log in", new_user_session_path, class: "fa-solid fa-right-to-bracket text-decoration-none link-dark d-flex justify-content-center"%>
-  <% end %>
 </div>

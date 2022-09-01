@@ -1,8 +1,9 @@
 <div class="task-manager">
-  <%# <div class="left-bar">
+  <div class="left-bar">
      <%= render "pages/sidebar" %>
-  <%# </div> %>
+  </div>
   <div class="page-content">
+
     <div class="header">Today Tasks</div>
     <div class="content-categories" data-controller="category">
       <div class="label-wrapper" data-action="click->category#clickedCategory">
@@ -19,7 +20,7 @@
       </div>
       <div class="label-wrapper" data-action="click->category#clickedCategory">
         <input class="nav-item" name="nav" type="radio" id="opt-3">
-        <label class="category" for="opt-3">Expenses</label>
+        <label class="category" for="opt-3">Expenses</label> 
       </div>
       <div class="label-wrapper" data-action="click->category#clickedCategory">
         <input class="nav-item" name="nav" type="radio" id="opt-4">
@@ -27,6 +28,10 @@
       </div>
     </div>
     <%= render "chores/chores", chores_categories: @chores_categories %>
+
+    <%= render "pages/page_content" %>
+    <%= render "chores/chores" %>
+
     <% if user_signed_in? %>
        <%#= render "bills/bills" %>
     <% end %>
@@ -76,6 +81,6 @@
     </div>
   </div>
   <div class="right-bar">
-    <%= render "pages/my_tasks" %>
+    <%= render "tasks/my_tasks" %>
   </div>
 </div>
