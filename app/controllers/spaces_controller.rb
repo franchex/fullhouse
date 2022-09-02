@@ -3,6 +3,13 @@ class SpacesController < ApplicationController
     @space = Space.new
   end
 
+  def show
+    @space = Space.find(params[:id])
+    @chores_categories = ["Bathroom", "Dishes", "Sweep", "Kitchen", "Trash",
+      "Washer"]
+    @expenses_categories = ["Restaurant", "Groceries", "Free Time", "Pets", "Drinks", "Party", "Gifts", "Service", "House"]
+  end
+
   def create
     @space = Space.new(space_params)
     @assignment = Assignment.new
@@ -14,10 +21,6 @@ class SpacesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def show
-    @space = Space.find(params[:id])
   end
 
   def index

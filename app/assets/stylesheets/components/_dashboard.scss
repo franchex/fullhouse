@@ -268,7 +268,8 @@ button {
 #opt-1:checked + label ,
 #opt-2:checked +  label ,
 #opt-3:checked +  label ,
-#opt-4:checked +  label {
+#opt-4:checked +  label ,
+#opt-5:checked +  label  {
   color: var(--checkbox-color);
   border-bottom: 2px solid var(--checkbox-color);
 }
