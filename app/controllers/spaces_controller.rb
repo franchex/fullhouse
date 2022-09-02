@@ -1,5 +1,5 @@
 class SpacesController < ApplicationController
-  before_action :set_space, only: [:show, :edit, :subscribe]
+
   def new
     @space = Space.new
   end
