@@ -6,6 +6,9 @@ class SpacesController < ApplicationController
 
   def show
     @space = Space.find(params[:id])
+    @chores_categories = ["Bathroom", "Dishes", "Sweep", "Kitchen", "Trash",
+      "Washer"]
+    @expenses_categories = ["Restaurant", "Groceries", "Free Time", "Pets", "Drinks", "Party", "Gifts", "Service", "House"]
   end
 
   def create

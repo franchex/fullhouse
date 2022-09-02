@@ -3,6 +3,13 @@ class ExpensesController < ApplicationController
     @expense = Expense.find(params[:id])
   end
 
+  def new
+    @space = Space.find(params[:space_id])
+    @chore = Expense.new
+    @category = params[:category] if params[:category]
+  end
+
+
   def create
     @expense = Expense.new(params[expense_params])
     @expense.save

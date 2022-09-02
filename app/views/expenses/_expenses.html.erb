@@ -1,0 +1,42 @@
+<div class="multi-button">
+  <%= link_to new_space_expense_path(current_user.spaces.first, category: "Restaurant") do %>
+    <button><i class="fa-solid fa-utensils"></i>Restaurant</button>
+  <% end %>
+
+  <%= link_to new_space_expense_path(current_user.spaces.first, category: "Groceries") do %>
+    <button><i class="fa-solid fa-cart-shopping"></i>Groceries</button>
+  <% end %>
+
+  <%= link_to new_space_expense_path(current_user.spaces.first, category: "Free Time") do %>
+   <button><i class="fa-solid fa-gamepad"></i>Free Time</button>
+  <% end %>
+
+  <%= link_to new_space_expense_path(current_user.spaces.first, category: "Pets") do %>
+   <button><i class="fa-solid fa-paw"></i>Pets</button>
+  <% end %>
+
+  <%= link_to new_space_expense_path(current_user.spaces.first, category: "Drinks") do %>
+   <button> <i class="fa-solid fa-martini-glass-citrus"></i> Drinks</button>
+  <% end %>
+
+ <%= link_to new_space_expense_path(current_user.spaces.first, category: "Party") do %>
+   <button><i class="fa-solid fa-cake-candles"></i>Party</button>
+  <% end %>
+
+   <%= link_to new_space_expense_path(current_user.spaces.first, category: "Gifts") do %>
+   <button><i class="fa-solid fa-gift"></i>Gifts</button>
+  <% end %>
+
+   <%= link_to new_space_expense_path(current_user.spaces.first, category: "Service") do %>
+   <button><i class="fa-solid fa-taxi"></i>Service</button>
+  <% end %>
+
+   <%= link_to new_space_expense_path(current_user.spaces.first, category: "House") do %>
+   <button><i class="fa-solid fa-house"></i>House</button>
+  <% end %>
+
+   <%= link_to new_space_expense_path(current_user.spaces.first, category: "Add") do %>
+   <button><i class="fa-solid fa-plus"></i>Add</button>
+  <% end %>
+
+</div>
