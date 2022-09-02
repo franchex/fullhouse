@@ -6,37 +6,24 @@ class ChoresController < ApplicationController
     @category = params[:category] if params[:category]
   end
 
-
-  def show
-    @chore = Chore.find(params[:id])
-  end
-
   def create
     @space = Space.find(params[:space_id])
     @chore = Chore.new(chore_params)
-
-
     @chore.space = @space
     if @chore.save
-      redirect_to root_path
+      redirect_to space_chores_path
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-  def update
-    @chore = Chore.find(params[:id])
-    @chore.update(chore_params)
-    redirect_to root_path
+  def index
+    @chores = Chore.all
   end
 
-
-  def destroy
+  def show
     @chore = Chore.find(params[:id])
-    @chore.destroy
-    redirect_to root_path
   end
-
 
 
   private
