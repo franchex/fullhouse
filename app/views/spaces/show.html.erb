@@ -5,7 +5,7 @@
   <div class="page-content">
     <% if user_signed_in? %>
     <div ><%= render "pages/page_content", space: current_user.spaces.first %></div>
-    <div class="inactive Bills"><%= render "bills/bills" %></div>
+    <div class="active Bills"><%= render "bills/bills" %></div>
     <div class="inactive Lists"><%= render "shopping_lists/shopping_lists" %></div>
     <div class="inactive Chores"><%= render "chores/chores", chores_categories: @chores_categories %></div>
       <% end %>
