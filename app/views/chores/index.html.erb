@@ -2,19 +2,11 @@
  <div class="tasks-wrapper bg-white p-5 h-100">
       <h2 class="header upcoming text-center">Your chores</h2>
       <% @chores.each do |chore| %>
-        <%# <div class="task">
-          <input class="task-item" name="task" type="checkbox" id="item-1" checked>
-          <label for="item-1">
-            <span class="label-text"><%= chore.name %></span>
-          <%# </label>
-          <span class="tag approved">Approved</span>
-        </div> %>
-
-        <div class="task-box green">
+            <div class="task-box green">
         <div class="description-task">
-          <div class="time"><%= chore.due_date %></div>
-          <div class="task-name"><strong><%= chore.name %></strong></div>
-          <div class="task-name"><%= chore.description %></div>
+          <div class="time">due date <%= chore.due_date %></div>
+          <div class="task-name"><%= chore.name %></div>
+          <div class="task-description"><%= chore.description %></div>
         </div>
       </div>
       <% end %>

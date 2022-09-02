@@ -1,11 +1,6 @@
 class SpacesController < ApplicationController
-  before_action :set_space, only: [:show, :edit, :subscribe]
   def new
     @space = Space.new
-  end
-
-  def show
-    @space = Space.find(params[:id])
   end
 
   def create
@@ -21,16 +16,12 @@ class SpacesController < ApplicationController
     end
   end
 
-  def update
+  def show
     @space = Space.find(params[:id])
-    @space.update(space_params)
-    redirect_to root_path
   end
 
-  def destroy
-    @space = Space.find(params[:id])
-    @space.destroy
-    redirect_to root_path
+  def index
+    @spaces = Space.all
   end
 
   private
@@ -39,7 +30,4 @@ class SpacesController < ApplicationController
     params.require(:space).permit(:name)
   end
 
-  def set_user
-    @user = current_user
-  end
 end
