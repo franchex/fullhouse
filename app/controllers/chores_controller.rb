@@ -19,6 +19,7 @@ class ChoresController < ApplicationController
 
   def index
     @chores = Chore.all
+    @space = Space.find(params[:space_id])
   end
 
   def show
