@@ -15,6 +15,6 @@
     <% end %>
   </div>
   <div class="right-bar">
-    <%= render "tasks/my_tasks" %>
+    <%= render "tasks/my_tasks", space: current_user.spaces.first %>
   </div>
 </div>
