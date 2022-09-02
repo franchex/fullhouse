@@ -1,11 +1,11 @@
 <div class="left-content">
-  <div class="multi-button">
+  <div class="multi-button d-flex justify-content-between">
     <% if user_signed_in? %>
       <div class="multi-button text-center mb-3">
         <a href=<%= user_path(current_user) %>><button><i class="fa-solid fa-user-group"></i> profile</button></a>
       </div>
       <div class="multi-button text-center mb-3">
-      <%= link_to new_user_space_path(current_user) do %>
+      <%= link_to user_spaces_path(current_user) do %>
         <button><i class="fa-solid fa-building-user"></i> Space</button>
       <% end %>
       </div>
