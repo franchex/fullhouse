@@ -1,23 +1,23 @@
 <div class="multi-button mt-2">
-  <%= link_to new_user_space_path(current_user) do %>
+  <%= link_to new_space_bill_path(current_user.spaces.first, category: "Electricity") do %>
       <button><i class="fa-solid fa-lightbulb"></i>Electricity</button>
   <% end %>
-  <%= link_to new_user_space_path(current_user) do %>
+  <%= link_to new_space_bill_path(current_user.spaces.first, category: "Waste") do %>
       <button><i class="fa-solid fa-trash-can"></i>Waste</button>
   <% end %>
-  <%= link_to new_user_space_path(current_user) do %>
+  <%= link_to new_space_bill_path(current_user.spaces.first, category: "Phone") do %>
       <button><i class="fa-solid fa-phone"></i>Phone</button>
   <% end %>
-  <%= link_to new_user_space_path(current_user) do %>
+  <%= link_to new_space_bill_path(current_user.spaces.first, category: "Gas") do %>
       <button><i class="fa-solid fa-fire"></i>Gas</button>
   <% end %>
-  <%= link_to new_user_space_path(current_user) do %>
+  <%= link_to new_space_bill_path(current_user.spaces.first, category: "Internet") do %>
       <button><i class="fa-solid fa-wifi"></i>Internet</button>
   <% end %>
-  <%= link_to new_user_space_path(current_user) do %>
+  <%= link_to new_space_bill_path(current_user.spaces.first, category: "Rent") do %>
       <button><i class="fa-solid fa-house"></i>Rent</button>
   <% end %>
-  <%= link_to new_user_space_path(current_user) do %>
+  <%= link_to new_space_bill_path(current_user.spaces.first) do %>
       <button><i class="fa-solid fa-plus"></i>Add</button>
   <% end %>
 </div>

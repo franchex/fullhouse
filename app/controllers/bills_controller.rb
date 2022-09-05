@@ -1,20 +1,21 @@
 class BillsController < ApplicationController
+  def new
+    @bill = Bill.new
+    @space = Space.find(params[:space_id])
+    @category = params[:category] if params[:category]
+  end
+
   def show
     @bill = Bill.find(params[:id])
   end
 
-  def new
-    @bill = Bill.new
-  end
 
   def create
-    @bill = Bill.new(space_params)
-    @assignment = Assignment.new
-    @assignment.user = current_user
-    @assignment.space = @space
-    if @space.save
-      @assignment.save
-      redirect_to root_path
+    @space = Space.find(params[:space_id])
+    @bill = Bill.new(bill_params)
+    @bill.space = @space
+    if @bill.save
+      redirect_to user_space_path(current_user, @space)
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,6 +36,6 @@ class BillsController < ApplicationController
   private
 
   def bill_params
-    params.require(:bill).permit(:name, :due_date)
+    params.require(:bill).permit(:name, :due_date, :category, :amount, :user_id)
   end
 end
