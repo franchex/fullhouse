@@ -1,3 +1,5 @@
+
+
 <div class="multi-button">
   <%= link_to new_space_expense_path(current_user.spaces.first, category: "Restaurant") do %>
     <button><i class="fa-solid fa-utensils"></i>Restaurant</button>
@@ -46,14 +48,13 @@
     <% expenses.reverse.each do |expense| %>
             <div class="task-box blue">
               <div class="description-task">
-                <div class="expense-category"><%= expense.category %></div>
-                <div class="task-amount"><%= expense.amount %></div>
-                <div class="task-user"><%= expense.user.first_name %></div>
                 <div class="task-name"><%= expense.name %></div>
-
+                <div class="expense-category"><%= expense.category %></div>
+                <div class="task-user"><%= expense.user.first_name %></div>
+                <div class="task-amount"><%= expense.amount %></div>
               </div>
             </div>
-          <%= link_to space_expense_path(expense),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+          <%= link_to space_expense_path(expense.space, expense), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
             <button><i class="fa-solid fa-trash"></i>delete</button>
           <% end %>
         <% end %>
