@@ -1,6 +1,11 @@
 <div class="left-content">
   <div class="multi-button">
-    <% if user_signed_in? %>
+      <div class="multi-button text-center mb-3">
+      <%= link_to root_path do %>
+        <button><i class="fa-solid fa-house-user"></i> Home</button>
+      <% end %>
+      </div>
+
       <div class="multi-button text-center mb-3">
         <a href=<%= user_path(current_user) %>><button><i class="fa-solid fa-user-group"></i> profile</button></a>
       </div>
@@ -14,11 +19,5 @@
       <div class="multi-button text-center mb-3">
         <a href="<%= destroy_user_session_path %>" data-turbo-method="delete"><button><i class="fa-solid fa-right-from-bracket"></i> Log out</button></a>
       </div>
-
-      <% else %>
-      <div class="multi-button text-center mb-3">
-        <a href="<%= new_user_session_path %>"><button><i class="fa-solid fa-right-to-bracket"></i> Log in</button></a>
-      </div>
-    <% end %>
     </div>
 </div>
