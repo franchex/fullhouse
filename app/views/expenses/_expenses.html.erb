@@ -1,3 +1,5 @@
+
+
 <div class="multi-button">
   <%= link_to new_space_expense_path(current_user.spaces.first, category: "Restaurant") do %>
     <button><i class="fa-solid fa-utensils"></i>Restaurant</button>
@@ -45,8 +47,8 @@
     <% expenses.reverse.each do |expense| %>
             <div class="task-box blue multi-button">
               <div class="description-task">
+                <div class="task-name"><%= expense.name %></div>
                 <div class="expense-category"><%= expense.category %></div>
-                <div class="task-amount"><%= expense.amount %></div>
                 <div class="task-user"><%= expense.user.first_name %></div>
                 <div class="d-flex justify-content-between">
                   <div class="task-name"><%= expense.name %></div>
