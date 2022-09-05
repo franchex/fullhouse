@@ -9,6 +9,7 @@ class SpacesController < ApplicationController
       "Washer"]
     @expenses_categories = ["Restaurant", "Groceries", "Free Time", "Pets", "Drinks", "Party", "Gifts", "Service", "House"]
     @expenses = @space.expenses
+    @chores = @space.chores
   end
 
   def create

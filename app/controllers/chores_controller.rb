@@ -1,13 +1,11 @@
 class ChoresController < ApplicationController
-
+  before_action :sets_space, only: [:new, :create, :destroy]
   def new
-    @space = Space.find(params[:space_id])
     @chore = Chore.new
     @category = params[:category] if params[:category]
   end
 
   def create
-    @space = Space.find(params[:space_id])
     @chore = Chore.new(chore_params)
     @chore.space = @space
     if @chore.save
@@ -26,6 +24,11 @@ class ChoresController < ApplicationController
     @chore = Chore.find(params[:id])
   end
 
+  def destroy
+    @chore = Chore.find(params[:id])
+    @chore.destroy
+    redirect_to user_space_path(current_user, @space), status: :see_other
+  end
 
   private
 
@@ -33,4 +36,7 @@ class ChoresController < ApplicationController
     params.require(:chore).permit(:name, :due_date, :category, :description, :user_id)
   end
 
+  def sets_space
+    @space = Space.find(params[:space_id])
+  end
 end
