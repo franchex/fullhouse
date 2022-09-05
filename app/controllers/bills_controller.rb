@@ -1,7 +1,8 @@
 class BillsController < ApplicationController
+  before_action :sets_space, only: [:new, :create, :destroy]
+
   def new
     @bill = Bill.new
-    @space = Space.find(params[:space_id])
     @category = params[:category] if params[:category]
   end
 
@@ -11,7 +12,6 @@ class BillsController < ApplicationController
 
 
   def create
-    @space = Space.find(params[:space_id])
     @bill = Bill.new(bill_params)
     @bill.space = @space
     if @bill.save
@@ -30,12 +30,16 @@ class BillsController < ApplicationController
   def destroy
     @bill = Bill.find(params[:id])
     @bill.destroy
-    redirect_to root_path
+    redirect_to user_space_path(current_user, @space), status: :see_other
   end
 
   private
 
   def bill_params
-    params.require(:bill).permit(:name, :due_date, :category, :amount, :user_id)
+    params.require(:bill).permit(:due_date, :category, :amount, :user_id)
+  end
+
+  def sets_space
+    @space = Space.find(params[:space_id])
   end
 end

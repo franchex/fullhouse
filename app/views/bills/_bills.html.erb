@@ -1,4 +1,4 @@
-<div class="multi-button mt-2">
+<!--<div class="multi-button mt-2">
   <%= link_to new_space_bill_path(current_user.spaces.first, category: "Electricity") do %>
       <button><i class="fa-solid fa-lightbulb"></i>Electricity</button>
   <% end %>
@@ -20,4 +20,38 @@
   <%= link_to new_space_bill_path(current_user.spaces.first) do %>
       <button><i class="fa-solid fa-plus"></i>Add</button>
   <% end %>
+</div> -->
+
+<div class="multi-button">
+  <% @bills_categories.each_with_index do |category, index| %>
+    <%= link_to new_space_bill_path(current_user.spaces.first, category: category) do %>
+    <button><i class="fa-solid fa-<%= @bills_categories_icons[index] %> "></i><%= category %></button>
+    <% end %>
+  <% end %>
+   <%= link_to new_space_bill_path(current_user.spaces.first) do %>
+   <button><i class="fa-solid fa-plus"></i>Add</button>
+  <% end %>
+</div>
+
+<div class="parent-bill">
+  <div class="bills-scroll">
+    <% bills.reverse.each do |bill| %>
+            <div class="task-box blue">
+              <div class="description-task">
+                <div class="bill-category"><%= bill.category %></div>
+                <div class="bill-payer"><%= bill.payer.first_name %></div>
+                <div class="task-amount"><%= bill.amount %></div>
+                <div class="d-flex justify-content-between">
+                  <div class="bill due_date"><%= bill.due_date %></div>
+                  <%= link_to space_bill_path(bill.space, bill), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                   <button><i class="fa-solid fa-trash"></i>delete</button>
+                 <% end %>
+                </div>
+              </div>
+            </div>
+          <!--<%= link_to space_bill_path(bill.space, bill), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <button><i class="fa-solid fa-trash"></i>delete</button>
+          <% end %> -->
+        <% end %>
+  </div>
 </div>

@@ -8,7 +8,11 @@ class SpacesController < ApplicationController
     @chores_categories = ["Bathroom", "Dishes", "Sweep", "Kitchen", "Trash",
       "Washer"]
     @expenses_categories = ["Restaurant", "Groceries", "Free Time", "Pets", "Drinks", "Party", "Gifts", "Service", "House"]
+    @expenses_categories_icons = ["utensils", "cart-shopping", "gamepad", "paw", "martini-glass-citrus", "cake-candles", "gift", "taxi", "house"]
     @expenses = @space.expenses
+    @bills = @space.bills
+    @bills_categories = ["Electricity", "Waste", "Phone", "Gas", "Internet", "Rent"]
+    @bills_categories_icons = ["lightbulb", "trash-can", "phone", "fire", "wifi", "house"]
     @chores = @space.chores
   end
 

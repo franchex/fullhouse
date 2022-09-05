@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :tasks
     resources :chores, only: [:new, :create, :index, :destroy]
     resources :expenses
-    resources :bills, only: [:new, :create, :index]
+    resources :bills, only: [:new, :create, :index, :destroy]
     resources :shopping_lists
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
