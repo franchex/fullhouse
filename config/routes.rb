@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :spaces, except: [:show ,:new, :create, :index] do
     resources :tasks
-    resources :chores, only: [:new, :create, :index]
+    resources :chores, only: [:new, :create, :index, :destroy]
     resources :expenses
     resources :bills, only: [:new, :create, :index, :destroy]
     resources :shopping_lists

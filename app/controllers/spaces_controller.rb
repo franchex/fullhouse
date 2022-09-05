@@ -13,6 +13,7 @@ class SpacesController < ApplicationController
     @bills = @space.bills
     @bills_categories = ["Electricity", "Waste", "Phone", "Gas", "Internet", "Rent"]
     @bills_categories_icons = ["lightbulb", "trash-can", "phone", "fire", "wifi", "house"]
+    @chores = @space.chores
   end
 
   def create
