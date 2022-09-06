@@ -1,0 +1,18 @@
+
+
+<div data-controller="tasks">
+  <div id="myDIV" class="header">
+    <%= simple_form_for [@space, @task], data: { action: "submit->todolist#newElement"} do |f| %>
+      <%= f.input :description, data: { todolist_target: "myinput" } %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+    <div class="mt-3">
+      <ul data-target="todolist.mylist">
+        <% tasks.each do |task| %>
+        <li data-action="click->tasks#clickedTask"><%= task.description %></li>
+        <% end %>
+      </ul>
+    </div>
+</div>
