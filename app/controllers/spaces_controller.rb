@@ -5,15 +5,16 @@ class SpacesController < ApplicationController
 
   def show
     @space = Space.find(params[:id])
-    @chores_categories = ["Bathroom", "Dishes", "Sweep", "Kitchen", "Trash",
-      "Washer"]
+    @chores = @space.chores
+    @chores_categories = ["Bathroom", "Dishes", "Sweep", "Kitchen", "Trash", "Washer"]
+    @expenses = @space.expenses
     @expenses_categories = ["Restaurant", "Groceries", "Free Time", "Pets", "Drinks", "Party", "Gifts", "Service", "House"]
     @expenses_categories_icons = ["utensils", "cart-shopping", "gamepad", "paw", "martini-glass-citrus", "cake-candles", "gift", "taxi", "house"]
-    @expenses = @space.expenses
     @bills = @space.bills
     @bills_categories = ["Electricity", "Waste", "Phone", "Gas", "Internet", "Rent"]
     @bills_categories_icons = ["lightbulb", "trash-can", "phone", "fire", "wifi", "house"]
-    @chores = @space.chores
+    @tasks = @space.tasks
+    @task = Task.new
   end
 
   def create

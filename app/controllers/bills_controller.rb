@@ -6,11 +6,6 @@ class BillsController < ApplicationController
     @category = params[:category] if params[:category]
   end
 
-  def show
-    @bill = Bill.find(params[:id])
-  end
-
-
   def create
     @bill = Bill.new(bill_params)
     @bill.space = @space

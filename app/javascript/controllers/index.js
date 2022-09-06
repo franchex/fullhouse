@@ -9,3 +9,9 @@ application.register("category", CategoryController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import ShoppingListsController from "./shopping_lists_controller"
+application.register("shopping-lists", ShoppingListsController)
+
+import TasksController from "./tasks_controller"
+application.register("tasks", TasksController)
