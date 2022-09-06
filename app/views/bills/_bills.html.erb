@@ -1,27 +1,3 @@
-<!--<div class="multi-button mt-2">
-  <%= link_to new_space_bill_path(current_user.spaces.first, category: "Electricity") do %>
-      <button><i class="fa-solid fa-lightbulb"></i>Electricity</button>
-  <% end %>
-  <%= link_to new_space_bill_path(current_user.spaces.first, category: "Waste") do %>
-      <button><i class="fa-solid fa-trash-can"></i>Waste</button>
-  <% end %>
-  <%= link_to new_space_bill_path(current_user.spaces.first, category: "Phone") do %>
-      <button><i class="fa-solid fa-phone"></i>Phone</button>
-  <% end %>
-  <%= link_to new_space_bill_path(current_user.spaces.first, category: "Gas") do %>
-      <button><i class="fa-solid fa-fire"></i>Gas</button>
-  <% end %>
-  <%= link_to new_space_bill_path(current_user.spaces.first, category: "Internet") do %>
-      <button><i class="fa-solid fa-wifi"></i>Internet</button>
-  <% end %>
-  <%= link_to new_space_bill_path(current_user.spaces.first, category: "Rent") do %>
-      <button><i class="fa-solid fa-house"></i>Rent</button>
-  <% end %>
-  <%= link_to new_space_bill_path(current_user.spaces.first) do %>
-      <button><i class="fa-solid fa-plus"></i>Add</button>
-  <% end %>
-</div> -->
-
 <div class="multi-button">
   <% @bills_categories.each_with_index do |category, index| %>
     <%= link_to new_space_bill_path(current_user.spaces.first, category: category) do %>
@@ -34,24 +10,21 @@
 </div>
 
 <div class="parent-bill">
-  <div class="bills-scroll">
+  <div class="bills-scroll ">
     <% bills.reverse.each do |bill| %>
-            <div class="task-box blue">
+            <div class="task-box blue multi-button">
               <div class="description-task">
                 <div class="bill-category"><%= bill.category %></div>
-                <div class="bill-payer"><%= bill.payer.first_name %></div>
-                <div class="task-amount"><%= bill.amount %></div>
+                <div class="bill-payer"><p>Payer: <%= bill.payer.first_name %></p></div>
+                <div class="task-amount"><p>Amount: $<%= bill.amount %></p></div>
                 <div class="d-flex justify-content-between">
-                  <div class="bill due_date"><%= bill.due_date %></div>
+                  <div class="bill due_date"><p>Due date: <%= bill.due_date %></p></div>
                   <%= link_to space_bill_path(bill.space, bill), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
                    <button><i class="fa-solid fa-trash"></i>delete</button>
                  <% end %>
                 </div>
               </div>
             </div>
-          <!--<%= link_to space_bill_path(bill.space, bill), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-            <button><i class="fa-solid fa-trash"></i>delete</button>
-          <% end %> -->
         <% end %>
   </div>
 </div>

@@ -13,13 +13,13 @@
 <div class= "content-box">
   <div class= "box-scroll">
     <% expenses.reverse.each do |expense| %>
-            <div class="task-box blue multi-button">
+            <div class="task-box red multi-button">
               <div class="description-task">
-                <div class="task-name"><%= expense.name %></div>
                 <div class="expense-category"><%= expense.category %></div>
-                <div class="task-user"><%= expense.user.first_name %></div>
+                <div class="task-name"><%= expense.name %></div>
+                <div class="task-name"><p>Amount: $<%= expense.amount %></p></div>
                 <div class="d-flex justify-content-between">
-                  <div class="task-name"><%= expense.name %></div>
+                  <div class="task-user"><%= expense.user.first_name %></div>
                   <%= link_to space_expense_path(expense),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
                     <button><i class="fa-solid fa-trash"></i>delete</button>
                   <% end %>
