@@ -1,89 +1,24 @@
-<div class="wrapper bg-white p-5">
-  <header role="banner">
-    <nav role="navigation">
-      <h1 class="">FullHouse</h1>
-        <%= render "pages/main_options" %>
-    </nav>
-  </header>
-  <main role="main">
-    <section class="sec-boxes" role="section" style="background-image: url('https://res.cloudinary.com/dqfnzfthu/image/upload/v1662412503/ruben-ramirez-y6F-mBv3jSI-unsplash_gf1b5w.jpg');">
-        <article class="box">
-          <h1>Organize chores</h1>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit beatae iusto eum eaque modi, placeat atque temporibus dolorem corrupti blanditiis at nisi ut voluptas aliquam voluptates! Laboriosam praesentium veritatis iusto!</p>
-        </article>
-        <article class="box">
-          <h1>Create tasks</h1>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, blanditiis aut dicta amet repudiandae modi aliquam dolor odit illum! Eveniet atque velit natus eum consectetur accusamus suscipit assumenda nemo nulla!</p>
-        </article>
-        <article class="box">
-          <h1>Manage your expences</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi saepe nulla natus pariatur qui laudantium, beatae autem rerum neque repellat illo et perspiciatis laborum quaerat!</p>
-        </article>
-        <article class="box">
-          <h1>Manage your bills</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat suscipit deserunt repellat, sit esse architecto nostrum aut ut, et aspernatur at odio, cum nobis voluptates. Rerum nostrum tempore dolor amet!</p>
-
-        </article>
-    </section>
-    <%# <section class="sec-events" role="section">
-      <hr />
-      <h1>Upcomming events</h1>
-      <article>
-        <h1>Tire Technology Expo</h1>
-        <p>Tire Technology Expo has grown in strength and stature every year since it was started in Europe 15 years ago. Visitors and exhibitors to the conference and exhibition staged in February 2014 universally praised it as the 'world's leading tire design and tire manufacturing event', noting in particular the outstanding quality of the conference papers and speakers, and the comprehensive extent of machinery manufacturers and suppliers who exhibited at the event.</p>
-        <a class="link" href="#">more...</a>
-      </article>
-      <article>
-        <h1>Meteorology World Expo</h1>
-        <p>Meteorological Technology World Expo is a truly international exhibition of the very latest climate, weather and hydro - meteorological forecasting, measurement and analysis technologies and service providers for a global community of key decision makers within the aviation industry, shipping companies, marine / port installations, airports, military operations, off-shore exploration companies, wind farm operators, met offices, agriculture operations and research institutes.</p>
-        <a class="link" href="#">more...</a>
-      </article>
-      <article>
-        <h1>Wearable Tech Expo</h1>
-        <p>See live demos, listen to case studies, speak with Wearable Tech Experts The first Wearable Tech Expo in Tokyo 2014. Key players from Japan, America and Europe announced their new products and attracted attention from all over the world. The next Wearable Tech Expo in Tokyo will be doubling in size and include Robotics and IoT. The main players in the wearable industry, human factor engineers, brain scientists, media providers and creators will discuss the future of wearable technology! </p>
-        <a class="link" href="#">more...</a>
-      </article>
-      <article>
-        <h1>Space Tech Expo</h1>
-        <p>Space Tech Expo is the West Coast's premier B2B space event for spacecraft, satellite, launch vehicle and space-related technologies. Taking place in Long Beach, the Space Tech Expo exhibition and conference brings together global decision-makers involved in the design, build and testing of spacecraft, satellite, launch vehicle and space-related technologies. Leading the West Coast space and satellite industry, Space Tech Expo is where end-users connect with solution providers.</p>
-        <a class="link" href="#">more...</a>
-      </article>
-    </section> %>
-    <section class="sec-projects" role="section">
-      <hr />
-    </section>
-    <section class="sec-partners" role="section">
-      <hr />
-      <div class="row">
-        <div class="logo-container">
-          <img src="https://i.imgur.com/oSriTuP.png" alt="Google logo" />
-        </div>
-        <div class="logo-container">
-          <img src="https://i.imgur.com/kRgvevC.png" alt="Apple logo" />
-        </div>
-        <div class="logo-container">
-          <img src="https://i.imgur.com/ZZjeIP3.png" alt="Wii logo" />
-        </div>
-        <div class="logo-container">
-          <img src="https://i.imgur.com/VTq1c9p.png" alt="Adithya Institute of Technology logo" />
-        </div>
-        <div class="logo-container">
-          <img src="https://i.imgur.com/GdYoyxo.png" alt="Intel logo" />
-        </div>
+<body>
+  <div class="content">
+      <div class="logo_container bg-secondary">
+        <img src= "https://res.cloudinary.com/dqfnzfthu/image/upload/v1662504947/Screen_Shot_2022-09-06_at_5.55.22_PM-removebg-preview_eaifsn.png" class="logo" alt="LOGO.">
       </div>
-    </section>
-  </main>
+      <h1>Roomates Colabortion<br>Organize Your Space In One APP</h1>
+      <div class="arrow bounce">
+      <br>
+      <a class="fa fa-arrow-down" href="#"></a>
+    </div>
+  <section class="button">
+    <div class="searchBox">
+
+     <%= render "pages/main_options" %>
+    </div>
+  </section>
+  <section class="social_icons">
+    <a href="#" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+    <a href="#" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+    <a href="#" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+    <a href="#" title="Telegram" target="_blank"><i class="fa fa-telegram"></i></a>
+  </section>
 </div>
-<footer>
-  <nav role="navigation">
-    <ul class="nav-ul d-flex justify-content-center">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Technologies</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Contacts</a></li>
-    </ul>
-  </nav>
-  <%# <p class="copy">&copy; Alex Devero Design 2014</p> %>
-</footer>
-<div class="line"></div>
+</body>
