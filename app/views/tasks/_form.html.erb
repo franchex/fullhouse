@@ -1,0 +1,4 @@
+<%= simple_form_for [space, task], data: { action: "submit->tasks#submitTaskForm", tasks_target: "form"} do |f| %>
+  <%= f.input :description, input_html: { data: { tasks_target: "taskInput" } } %>
+  <%= f.submit %>
+<% end %>

@@ -1,15 +1,14 @@
-<div data-controller="shopping_lists"> <!--name of javascript controller-->
-  <div class="header">
-    <%= simple_form_for [space, shopping_list], data: { action: "submit->shopping_lists#newElement"} do |f| %>
-      <%= f.input :name, data: { todolist_target: "myinput" } %>
+<div data-controller="shopping-lists">
+    <%= simple_form_for [space, shopping_list], data: { action: "submit->shopping-lists#newElement", shopping_lists_target: "form"} do |f| %>
+      <%= f.input :name, data: { todolist_target: "listInput" } %>
       <%= f.submit %>
     <% end %>
   </div>
 
     <div class="mt-3">
-      <ul data-target="todolist.mylist">
+      <ul data-target="shoppingList">
         <% shopping_lists.each do |shopping_list| %>
-        <li data-action="click->shopping_lists#clickedShopping"><%= shopping_list.name %></li>
+        <li data-action="click->shopping-lists#clickedShopping"><%= shopping_list.name %></li>
         <% end %>
       </ul>
     </div>

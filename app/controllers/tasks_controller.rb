@@ -11,14 +11,20 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
+    @tasks = @space.tasks
     @task.space = @space
     @task.user = current_user
-    if @task.save
-      redirect_to user_space_path(current_user, @space)
-    else
-       redirect_to user_space_path(current_user, @space), status: :unprocessable_entity
+    respond_to do |format|
+      if @task.save
+        format.html { redirect_to user_space_path(current_user, @space) }
+        format.json
+      else
+        format.html { redirect_to user_space_path(current_user, @space), status: :unprocessable_entity }
+        format.json
+      end
     end
   end
+
 
   def destroy
     @task = Task.find(params[:id])

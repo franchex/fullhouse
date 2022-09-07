@@ -2,29 +2,33 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="shopping-lists"
 export default class extends Controller {
+  static targets = ["listImput", "shoppingList", "form"]
   connect() {
     console.log("me conecte desde un controller de stimulus")
   }
 
   newElement(event) {
     event.preventDefault();
-    const input = this.myinputTarget;
+    const input = this.lisInputTarget;
 
-    if (input && input.value !== '') {
-      // Create a new list item when clicking on the "Add" button
-      const li = document.createElement("li");
-      const t = document.createTextNode(input.value);
-      li.appendChild(t);
-      let span = this.addCloseButtonOnLiItem();
-      li.appendChild(span);
-      li.dataset['action'] = this.initToggleCheck();
-      this.mylistTarget.appendChild(li);
-      this.myinputTarget.value = "";
-      this.nbreTarget.textContent = parseInt(this.nbreTarget.textContent) + 1;
+    if (input) {
+      const new_list = `<li  data-action="click->shopping_lists#clickedShopping"">${input.value}</li>`
+      this.taskListTarget.insertAdjacentHTML("afterbegin", new_list)
     }
+    fetch(this.formTarget.action, {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: new FormData(this.formTarget)
+    })
+    .then(response => response.json())
+    .then((data) => {
+      console.log(data)
+
+    })
   }
 
   clickedShopping(event) {
-    event.currentTarget.classList.add("checked")
+    console.log("hola");
+    event.currentTarget.classList.toggle("checked")
     }
 }

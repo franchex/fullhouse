@@ -5,14 +5,14 @@
   <div class="page-content">
     <% if user_signed_in? %>
       <div ><%= render "pages/page_content", space: @space %></div>
-      <div class="inactive Tasks"><%= render "tasks/tasks", tasks: @tasks, space: @space, task: @task %></div>
+      <div class="inactive Tasks"><%= render "tasks/tasks", tasks: @tasks, space: @space, new_task: @task %></div>
       <div class="active Bills"><%= render "bills/bills", bills: @bills, space: @space%></div>
       <div class="inactive Shopping"><%= render "shopping_lists/shopping_lists", shopping_lists: @shopping_lists, space: @space, shopping_list: @shopping_list %></div>
       <div class="inactive Chores"><%= render "chores/chores", chores_categories: @chores_categories, chores: @chores, space: @space %></div>
       <div class="inactive Expenses"><%= render "expenses/expenses", expenses_categories: @expenses_categories, expenses: @expenses, space: @space %></div>
     <% end %>
-  </div>
-  <div class="right-bar">
-    <%= render "tasks/my_tasks", space: @space %>
+    <div class="right-bar">
+      <%= render "tasks/my_tasks", space: @space %>
+    </div>
   </div>
 </div>
