@@ -2,33 +2,37 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="tasks"
 export default class extends Controller {
+  static targets = ["taskInput", "taskList", "form"]
 
   connect() {
     console.log("Hello form task controller");
   }
 
-  newElement(event) {
+  submitTaskForm(event) {
     event.preventDefault();
-    const input = this.myinputTarget;
+    console.log("holi")
+    const input = this.taskInputTarget;
 
-    if (input && input.value !== '') {
-      // Create a new list item when clicking on the "Add" button
-      const li = document.createElement("li");
-      const t = document.createTextNode(input.value);
-      li.appendChild(t);
-      let span = this.addCloseButtonOnLiItem();
-      li.appendChild(span);
-      li.dataset['action'] = this.initToggleCheck();
-      this.mylistTarget.appendChild(li);
-      this.myinputTarget.value = "";
-      this.nbreTarget.textContent = parseInt(this.nbreTarget.textContent) + 1;
+    if (input) {
+      const new_task = `<li data-action="click->tasks#clickedTask">${input.value}</li>`
+      this.taskListTarget.insertAdjacentHTML("afterbegin", new_task)
     }
+
+    fetch(this.formTarget.action, {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: new FormData(this.formTarget)
+    })
+    .then(response => response.json())
+    .then((data) => {
+      console.log(data)
+
+    })
   }
 
   clickedTask(event) {
-    event.currentTarget.classList.add("checked")
-    }
-
+    event.currentTarget.classList.toggle("checked")
+  }
 }
 
 

@@ -8,19 +8,19 @@
   // }
 
   body{
-  width:100vw;
-  height:100vh;
-  margin:0;
-  overflow:hidden !important;
-  font-family: 'Source Sans 3', sans-serif !important;
-  background: linear-gradient(rgba(1,1,1,0.0), rgba(1, 1, 1, 0.0)), url("https://res.cloudinary.com/dqfnzfthu/image/upload/v1662477541/miki-fath-1v1zjqxldmc-unsplash_ant7hr.jpg");
-  background-position:center;
-  background-size:cover;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--white);
-  position:relative;
+    width:100vw;
+    height:100vh;
+    margin:0;
+    overflow:hidden !important;
+    font-family: "Nunito", "Helvetica", "sans-serif";
+    background: linear-gradient(rgba(1,1,1,0.0), rgba(1, 1, 1, 0.0)), url("https://res.cloudinary.com/dqfnzfthu/image/upload/v1662477541/miki-fath-1v1zjqxldmc-unsplash_ant7hr.jpg");
+    background-position:center;
+    background-size:cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--white);
+    position:relative;
   }
   .logo{
     width: 100%;
