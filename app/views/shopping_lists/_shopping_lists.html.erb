@@ -1,29 +1,16 @@
-
-
-<div data-controller="todolist">
-  <div id="myDIV" class="header">
-    <h2 style="margin:5px">My To Do List with Stimulus.js</h2>
-    <form data-action="submit->todolist#newElement">
-      <input type="text" data-target="todolist.myinput" placeholder="Title..." tabindex="1">
-      <input type="submit" value="Add" class="addBtn" tabindex="2" >
-    </form>
+<div data-controller="shopping_lists"> <!--name of javascript controller-->
+  <div class="header">
+    <%= simple_form_for [space, shopping_list], data: { action: "submit->shopping_lists#newElement"} do |f| %>
+      <%= f.input :name, data: { todolist_target: "myinput" } %>
+      <%= f.submit %>
+    <% end %>
   </div>
 
-  <ul data-target="todolist.mylist">
-
-
-    <li>Hit the gym</li>
-    <li class="checked">Pay bills</li>
-    <li>Meet George</li>
-    <li>Buy eggs</li>
-    <li>Read a book</li>
-    <li>Organize office</li>
-  </ul>
-
-  <div><br><br>
-    <label>Number of Tasks :</label>
-    <span data-target="todolist.nbre">6</span><br>
-    <label>Tasks done :</label>
-    <span data-target="todolist.nbreal">x</span><br>
-  </div>
+    <div class="mt-3">
+      <ul data-target="todolist.mylist">
+        <% shopping_lists.each do |shopping_list| %>
+        <li data-action="click->shopping_lists#clickedShopping"><%= shopping_list.name %></li>
+        <% end %>
+      </ul>
+    </div>
 </div>
