@@ -4,16 +4,13 @@
   <div class= "content-box m-2">
     <div class= "box-scroll">
       <div>
-        <%= simple_form_for [@space, @task], data: { action: "submit->tasks#submitTaskForm", tasks_target: "form"} do |f| %>
-          <%= f.input :description, input_html: { data: { tasks_target: "taskInput" } } %>
-          <%= f.submit %>
-        <% end %>
+        <%= render "tasks/form", space: space, task: new_task %>
       </div>
-        <ul data-tasks-target="taskList" class="mt-2">
-          <% tasks.each do |task| %>
-          <li data-action="click->tasks#clickedTask"><%= task.description %></li>
-          <% end %>
-        </ul>
+      <ul data-tasks-target="taskList" class="mt-2">
+        <% tasks.each do |task| %>
+          <%= render "tasks/task_list", task: task %>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

@@ -12,11 +12,14 @@ class ShoppingListsController < ApplicationController
   def create
     @shopping_list = ShoppingList.new(shopping_list_params)
     @shopping_list.space = @space
-    if @shopping_list.save
-      redirect_to user_space_path(current_user, @space)
-    else
-      flash[:alert] = "you dumb"
-      redirect_to user_space_path(current_user, @space), status: :unprocessable_entity
+    respond_to do |format|
+      if @shopping_list.save
+        format.html { redirect_to user_space_path(current_user, @space) }
+        format.json
+      else
+        format.html { redirect_to user_space_path(current_user, @space), status: :unprocessable_entity }
+        format.json
+      end
     end
   end
 

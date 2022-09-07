@@ -10,24 +10,20 @@ export default class extends Controller {
 
   submitTaskForm(event) {
     event.preventDefault();
-    console.log("holi")
-    const input = this.taskInputTarget;
-
-    if (input) {
-      const new_task = `<li data-action="click->tasks#clickedTask">${input.value}</li>`
-      this.taskListTarget.insertAdjacentHTML("afterbegin", new_task)
-    }
-
+    console.log(this.formTarget)
     fetch(this.formTarget.action, {
       method: "POST",
       headers: { "Accept": "application/json" },
       body: new FormData(this.formTarget)
-    })
-    .then(response => response.json())
-    .then((data) => {
-      console.log(data)
-
-    })
+    }).then(response => response.json())
+      .then((data) => {
+        console.log(data)
+        if (data.inserted_item) {
+          console.log("hola desde insert item");
+          this.taskListTarget.insertAdjacentHTML("afterbegin", data.inserted_item)
+        }
+        this.formTarget.outerHTML = data.form
+      })
   }
 
   clickedTask(event) {
