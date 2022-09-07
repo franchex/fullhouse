@@ -1,18 +1,19 @@
 
 
 <div data-controller="tasks">
-  <div id="myDIV" class="header">
-    <%= simple_form_for [space, task], data: { action: "submit->todolist#newElement"} do |f| %>
-      <%= f.input :description, data: { todolist_target: "myinput" } %>
-      <%= f.submit %>
-    <% end %>
-  </div>
-
-    <div class="mt-3">
-      <ul data-target="todolist.mylist">
-        <% tasks.each do |task| %>
-        <li data-action="click->tasks#clickedTask"><%= task.description %></li>
+  <div class= "content-box m-2">
+    <div class= "box-scroll">
+      <div>
+        <%= simple_form_for [@space, @task], data: { action: "submit->tasks#submitTaskForm", tasks_target: "form"} do |f| %>
+          <%= f.input :description, input_html: { data: { tasks_target: "taskInput" } } %>
+          <%= f.submit %>
         <% end %>
-      </ul>
+      </div>
+        <ul data-tasks-target="taskList" class="mt-2">
+          <% tasks.each do |task| %>
+          <li data-action="click->tasks#clickedTask"><%= task.description %></li>
+          <% end %>
+        </ul>
     </div>
+  </div>
 </div>

@@ -16,11 +16,9 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to user_space_path(current_user, @space)
     else
-      redirect_to user_space_path(current_user, @space), status: :unprocessable_entity
-      # render :new, status: :unprocessable_entity
+       redirect_to user_space_path(current_user, @space), status: :unprocessable_entity
     end
   end
-
 
   def destroy
     @task = Task.find(params[:id])
