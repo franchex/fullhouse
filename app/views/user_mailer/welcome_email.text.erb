@@ -1,0 +1,9 @@
+Welcome to fullhouseapp.me, <%= @user.name %>
+===============================================
+
+You have successfully signed up to fullhouseapp.me,
+your username is: <%= @user.login %>.
+
+To login to the site, just follow this link: <%= @url "http://localhost:3000/spaces/#{@user.space.id}/assignments"%>.
+
+Thanks for joining and have a great day!

@@ -38,7 +38,7 @@ class SpacesController < ApplicationController
   end
 
   def index
-    @spaces = Space.all
+    @spaces = current_user.spaces.select { |s| s.assignments.where(accepted: false, user: current_user).any? }
   end
 
   private

@@ -11,4 +11,8 @@ class User < ApplicationRecord
   has_many :expenses
   has_many :shopping_lists
   validates :first_name, :last_name, presence: true
+
+  def self.not_current_user(current_user)
+    User.all.select { |user| user.id != current_user.id }
+  end
 end
