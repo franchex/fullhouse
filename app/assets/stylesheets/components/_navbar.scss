@@ -8,5 +8,16 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 150px;
+}
+
+.add-button{
+  float: left !important;
+  color: blueviolet;
+  font-size: large;
+}
+
+.add-button:hover {
+  color: white;
+  background-color: #753BBD;
 }
