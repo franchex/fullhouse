@@ -8,3 +8,22 @@
 .parent-bill{
   overflow: hidden;
 }
+
+.simple_form{
+  backdrop-filter: blur(5px);
+  padding: 1rem 2rem;
+  border-radius: 7%;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.form-buttons{
+  font-size: 2vmin;
+    padding: 0.5em 1em;
+    background: #fff;
+    color: #4A5568;
+    border: 0px solid #A0AEC0;
+    border-radius: 8px;
+    margin: 0.1em;
+    box-shadow: 0 0 0 #bee3f8;
+    transform: translateY(0);
+}

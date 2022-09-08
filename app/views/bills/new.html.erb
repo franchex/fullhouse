@@ -1,12 +1,14 @@
-<%= simple_form_for [@space, @bill] do |f| %>
-  <% if @category %>
-    <%= f.input :category, input_html: {value: @category, disabled: :true} %>
-    <%= f.input :category, :as => :hidden, :input_html => { :value =>  @category } %>
-  <% else %>
-    <%= f.input :category %>
+<div class ="form-container">
+  <%= simple_form_for [@space, @bill] do |f| %>
+    <% if @category %>
+      <%= f.input :category, input_html: {value: @category, disabled: :true} %>
+      <%= f.input :category, :as => :hidden, :input_html => { :value =>  @category } %>
+    <% else %>
+      <%= f.input :category %>
+    <% end %>
+    <%= f.input :amount %>
+    <%= f.association :payer, collection: @space.users, label_method: :first_name, value_method: :id, include_blank: false %>
+    <%= f.input :due_date %>
+    <%= f.submit %>
   <% end %>
-  <%= f.input :amount %>
-  <%= f.association :payer, collection: @space.users, label_method: :first_name, value_method: :id, include_blank: false %>
-  <%= f.input :due_date %>
-  <%= f.submit %>
-<% end %>
+</div>

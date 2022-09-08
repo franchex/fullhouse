@@ -8,8 +8,15 @@
       <%= f.input :name %>
     </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Add" %>
+    <div class="form-actions d-flex justify-content-between mt3" class = "form-buttons">
+      <div>
+        <%= f.button :submit, "Add" %>
+      </div>
+      <div>
+        <%= link_to user_spaces_path(current_user) do %>
+          <button class="return-button"> Return</button>
+        <% end %>
+      </div>
     </div>
   <% end %>
 </div>

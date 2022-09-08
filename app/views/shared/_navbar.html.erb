@@ -1,14 +1,20 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "https://res.cloudinary.com/dqfnzfthu/image/upload/v1662504947/Screen_Shot_2022-09-06_at_5.55.22_PM-removebg-preview_eaifsn.png" %>
     <% end %>
+
+    <div >
+      <%= link_to new_user_space_path do %>
+        <button class= "add-button"><i class="fa-solid fa-plus" ></i>Add Space</button>
+      <% end %>
+    </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+   <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
@@ -31,6 +37,6 @@
           </li>
         <% end %>
       </ul>
-    </div>
+    </div> -->
   </div>
 </div>
