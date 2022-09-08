@@ -1,0 +1,6 @@
+<div>
+<%= simple_form_for [@space, @assignment] do |f| %>
+ <%= f.association :user,collection: User.not_current_user(current_user), label_method: :first_name, value_method: :id, include_blank: false %>
+ <%= f.submit "asignar usuario", class: "btn btn-success" %>
+ <% end %>
+</div>

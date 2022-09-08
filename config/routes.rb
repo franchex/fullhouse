@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :users, only: [:show] do
-    resources :assignments, only: [:new, :create]
     resources :spaces, only: [:show ,:new, :create, :index]
   end
 
