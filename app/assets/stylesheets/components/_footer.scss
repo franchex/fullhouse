@@ -1,0 +1,119 @@
+.container {
+  bottom: 0;
+  width: 100%;
+  background-color: #FFF562;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.gen-infofo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.info-sect {
+  text-align: left;
+}
+
+.list-unstyled {
+  color: black;
+}
+
+.a {
+  text-decoration: none;
+}
+
+//Medium devices Desktops (≥992px)
+@media screen and (max-width: 992px) {
+  .container {
+      bottom: 0;
+      width: 100%;
+      background-color: #FFF562;
+      padding: 40px;
+  }
+  .gen-infofo {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+  }
+  .info-sect {
+      text-align: right;
+  }
+  .list-unstyled {
+      color: black;
+  }
+  .a {
+      text-decoration: none;
+  }
+}
+
+//Medium devices Desktops (≥768px)
+@media screen and (max-width: 768px) {
+  .container {
+      bottom: 0;
+      width: 100%;
+      background-color: #FFF562;
+      padding: 10px;
+  }
+  .gen-infofo {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+  }
+  .info-sect {
+      text-align: left;
+  }
+  .list-unstyled {
+      color: black;
+  }
+  .a {
+      text-decoration: none;
+  }
+}
+
+//Medium devices Desktops (≥640)
+@media screen and (max-width: 640px) {
+  .container {
+      bottom: 0;
+      width: 100%;
+      background-color: #FFF562;
+      padding: 30px;
+  }
+  .gen-infofo {
+      flex-direction: column;
+      justify-content: space-evenly;
+  }
+  .info-sect {
+      text-align: right;
+  }
+  .list-unstyled {
+      color: black;
+  }
+  .a {
+      text-decoration: none;
+  }
+}
+
+//Small devices Tablets (≥480px)
+@media screen and (max-width: 480px) {
+  .container {
+      bottom: 0;
+      background-color: #FFF562;
+      padding: 30px;
+  }
+  .gen-infofo {
+      flex-direction: column;
+      justify-content: space-evenly;
+  }
+  .info-sect {
+      text-align: right;
+  }
+  .list-unstyled {
+      color: black;
+  }
+  .a {
+      text-decoration: none;
+  }
+}

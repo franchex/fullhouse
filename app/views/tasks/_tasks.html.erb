@@ -4,12 +4,10 @@
   <div class= "content-box m-2">
     <div class= "box-scroll">
       <div>
-        <%= render "tasks/form", space: space, task: new_task %>
+        <%= render "tasks/form", space: space, new_task: new_task %>
       </div>
       <ul data-tasks-target="taskList" class="mt-2">
-        <% tasks.each do |task| %>
-          <%= render "tasks/task_list", task: task %>
-        <% end %>
+        <%= render "tasks/task_list", tasks: tasks %>
       </ul>
     </div>
   </div>

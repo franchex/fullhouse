@@ -25,11 +25,14 @@ class TasksController < ApplicationController
     end
   end
 
-
   def destroy
+    @tasks = @space.tasks
     @task = Task.find(params[:id])
     @task.destroy
-    redirect_to user_space_path(current_user, @space), status: :see_other
+    respond_to do |format|
+      format.html { redirect_to user_space_path(current_user, @space), status: :see_other }
+      format.json
+    end
   end
 
   private

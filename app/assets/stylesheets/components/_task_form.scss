@@ -11,8 +11,8 @@ ul li {
   position: relative;
   padding: 8px;
   list-style-type: none;
-  background: #eee;
-  font-size: 12px;
+  // background: #eee;
+  font-size: 16px;
   transition: 0.2s;
 
   /* make the list items unselectable */
@@ -23,9 +23,9 @@ ul li {
 }
 
 /* Set all odd list items to a different color (zebra-stripes) */
-ul li:nth-child(odd) {
-  background: rgba(138, 115, 242, 0.5);
-}
+// ul li:nth-child(odd) {
+//   background: rgba(138, 115, 242, 0.5);
+// }
 
 /* Darker background-color on hover */
 ul li:hover {
