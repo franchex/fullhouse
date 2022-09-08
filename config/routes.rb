@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :spaces, except: [:show ,:new, :create, :index] do
+    resources :assignments, only: [:new, :create, :update]
     resources :tasks, except: :destroy
     resources :chores, only: [:new, :create, :index, :destroy]
     resources :expenses
