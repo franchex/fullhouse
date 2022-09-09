@@ -17,7 +17,7 @@
   --tag-color-text-three: #e77f89;
   --tag-color-four: #f7f8fc;
   --tag-color-text-four: #a0a6b5;
-  --checkbox-color: #009e90;
+  --checkbox-color: white;
   --button-color: #49beb7;
   --box-color: #fff1d6;
   --box-color-2: #d3e6ff;
@@ -41,7 +41,7 @@ body {
   padding: 20px;
   font-family: "Nunito", "Helvetica", "sans-serif";
   font-size: 12px;
-  background-image: linear-gradient(21deg, rgba(64, 83, 206, 0.3697003234675773) 68%, rgba(255, 206, 196, 0.5) 163%),linear-gradient(163deg, rgba(49, 146, 170, 0.07944489965716128) 86%, rgba(239, 112, 138, 0.5) 40%),linear-gradient(30deg, rgba(76, 79, 173, 0.6173675716587805) 22%, rgba(237, 106, 134, 0.5) 169%),linear-gradient(48deg, rgba(31, 85, 147, 0.7323890641868473) 64%, rgba(247, 126, 132, 0.5) 43%); background-blend-mode: overlay,multiply,color,normal;
+   background-image: linear-gradient(21deg, rgba(64, 83, 206, 0.3697003234675773) 68%, rgba(255, 206, 196, 0.5) 163%),linear-gradient(163deg, rgba(49, 146, 170, 0.07944489965716128) 86%, rgba(239, 112, 138, 0.5) 40%),linear-gradient(30deg, rgba(76, 79, 173, 0.6173675716587805) 22%, rgba(237, 106, 134, 0.5) 169%),linear-gradient(48deg, rgba(31, 85, 147, 0.7323890641868473) 64%, rgba(247, 126, 132, 0.5) 43%); background-blend-mode: overlay,multiply,color,normal;
 }
 
 ul {
@@ -53,7 +53,7 @@ ul {
 .task-manager {
   display: flex;
   justify-content: space-between;
-  background: #fff;
+  background: #753bbda7;
   border-radius: 4px;
   height: 1200px;
   max-height: 1200px;
@@ -88,16 +88,18 @@ ul {
 
 
 .left-bar {
-  background-color: var(--bg-color);
+  background-color:#753bbda7;
   width: 20vh;
   border-right: 1px solid #e3e7f7;
   position: relative;
+  border-radius: 5px;
 }
 
 .left-content {
   padding: 10px;
   margin-top: 20px;
   font-family: "Nunito", "Helvetica", "sans-serif";
+
 }
 
 .item {
@@ -240,8 +242,8 @@ ul {
   padding: 5px 20px 0 20px;
   width: 100%;
   .header {
-    font-size: 26px;
-    color: var(--main-color);
+    font-size: 36px;
+    color:whitesmoke;
     margin-top: 30px;
   }
 }
@@ -250,7 +252,6 @@ ul {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  border-bottom: 1px solid #ddd;
   padding: 20px 0;
 }
 
@@ -258,7 +259,7 @@ ul {
 
 .category {
   font-weight: 500;
-  color: var(--secondary-color);
+  color: whitesmoke;
   border-bottom: 1px solid #ddd;
   transition: .4s ease-in;
   padding: 20px 30px;
