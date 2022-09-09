@@ -9,6 +9,6 @@
     <%= f.input :amount %>
     <%= f.association :payer, collection: @space.users, label_method: :first_name, value_method: :id, include_blank: false %>
     <%= f.input :due_date %>
-    <%= f.submit %>
+    <%= f.submit class:"btn btn-outline-dark form-button" %>
   <% end %>
 </div>

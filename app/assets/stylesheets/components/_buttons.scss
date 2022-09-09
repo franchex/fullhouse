@@ -19,6 +19,10 @@ button{
   transform: translateY(0);
 }
 
+.form-button {
+  border-radius: 10% !important;
+}
+
 button i{
   color: #5a5a5a;
   margin-right: .3em;
