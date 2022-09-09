@@ -7,7 +7,6 @@ export default class extends Controller {
     action: String
   }
   connect() {
-    console.log("Hello form task controller");
   }
 
   submitTaskForm(event) {
@@ -21,10 +20,11 @@ export default class extends Controller {
       .then((data) => {
         console.log(data)
         if (data.inserted_item) {
-          console.log("hola desde insert item");
           this.taskListTarget.insertAdjacentHTML("afterbegin", data.inserted_item)
+
         }
-        this.formTarget.outerHTML = data.form
+        // this.formTarget.outerHTML = data.form
+        this.formTarget.reset()
       })
   }
 

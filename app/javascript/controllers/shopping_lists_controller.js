@@ -4,7 +4,6 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["listImput", "shoppingList", "form"]
   connect() {
-    console.log("me conecte desde un controller de stimulus")
   }
 
   newElement(event) {
