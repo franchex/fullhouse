@@ -1,0 +1,4 @@
+  <div class="d-flex justify-content-between multi-button">
+      <li data-action="click->tasks#clickedTask" ><%= task.description %> </li>
+      <button data-action="click->tasks#deleteTask" data-space-id="<%= @space.id %>" data-task-id="/tasks/<%= task.id %>"><i class="fa-solid fa-trash"></i>delete</button>
+  </div>

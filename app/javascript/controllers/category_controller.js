@@ -14,8 +14,6 @@ export default class extends Controller {
     active_partial.classList.remove("active")
     partial.classList.remove("inactive")
     partial.classList.add("active")
-    console.log(partial)
-    console.log(category)
 
   }
 }
