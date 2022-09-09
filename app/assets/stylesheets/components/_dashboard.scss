@@ -20,9 +20,9 @@
   --checkbox-color: white;
   --button-color: #49beb7;
   --box-color: #fff1d6;
-  --box-color-2: #d3e6ff;
+  --box-color-2: #728bed;
   --box-color-3: #ffd9d9;
-  --box-color-4: #daffe5;
+  --box-color-4: #eee2f4;
   --task-color: #777982;
 }
 
@@ -49,9 +49,6 @@ ul {
   padding: 0;
 }
 
-.nav{
-  width: 1000px;
-}
 
 .task-manager {
   display: flex;
@@ -91,7 +88,7 @@ ul {
 
 
 .left-bar {
-  background-color:#753bbda7;
+  background-color:#DBACE4;
   width: 20vh;
   border-right: 1px solid #e3e7f7;
   position: relative;
