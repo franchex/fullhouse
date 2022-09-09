@@ -4,7 +4,9 @@
       <button ><img src="https://i.imgur.com/wvxPV9S.png" height="100" width="100" /></button>
       <span class="name mt-3"><%= @user.first_name %> <%= @user.last_name %></span>
       <span class="idd"><%= @user.email %></span>
-      <span class="idd"><%= @user.spaces.last.name %></span>
+      <% if @user.spaces.any? %>
+        <span class="idd"><%= @user.spaces.last.name %></span>
+      <% end %>
       <div class="m-2 d-flex justify-content-between">
         <div class="multi-button mx-3">
           <%= link_to edit_user_registration_path do %>
