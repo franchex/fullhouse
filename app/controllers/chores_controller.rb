@@ -9,7 +9,7 @@ class ChoresController < ApplicationController
     @chore = Chore.new(chore_params)
     @chore.space = @space
     if @chore.save
-      redirect_to space_chores_path
+      redirect_to user_space_path(current_user, @space)
     else
       render :new, status: :unprocessable_entity
     end

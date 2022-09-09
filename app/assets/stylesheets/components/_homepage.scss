@@ -39,9 +39,16 @@
   left:2vw;
   }
 
-  .logo_container{
-    background: rgba(138, 189, 231, 0.457);
-  }
+  .content .home-buttons{
+    width:30%;
+    position:absolute;
+    top:1rem;
+    right:2vw;
+    margin-top: 40px;
+    }
+  // .logo_container{
+  //   background: rgba(138, 189, 231, 0.457);
+  // }
 
   .content h1{
   font-size:4.5em;
