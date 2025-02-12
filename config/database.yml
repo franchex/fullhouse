@@ -32,7 +32,9 @@ production:
   url: <%= ENV['DATABASE_URL'] %>
   database: full_house_production
   username: full_house
-  password: <%= ENV["FULL_HOUSE_DATABASE_PASSWORD"] %>
+  password: postgres://user:password@host:5432/full_house_production
+  port: 5432
+
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
 
