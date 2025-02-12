@@ -79,6 +79,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-group :production do
-  gem 'pg'  # If you're using PostgreSQL
-end
