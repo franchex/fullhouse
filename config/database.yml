@@ -38,7 +38,7 @@ production:
   <<: *default
   adapter: postgresql
   encoding: unicode
-  url: <%= ENV['postgresql://postgresql_full_house_user:ICRhJ6jRcasgkI7hFOrDJ32fkAzzhqQw@dpg-cum83jdumphs738eemc0-a/postgresql_full_house'] %>
+  database: <%= ENV['postgresql://postgresql_full_house_user:ICRhJ6jRcasgkI7hFOrDJ32fkAzzhqQw@dpg-cum83jdumphs738eemc0-a/postgresql_full_house'] %>
   username: postgresql_full_house_user
   password: ICRhJ6jRcasgkI7hFOrDJ32fkAzzhqQw
   port: 5432
