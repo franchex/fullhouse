@@ -42,7 +42,6 @@ production:
   username: postgresql_full_house_user
   password: ICRhJ6jRcasgkI7hFOrDJ32fkAzzhqQw
   port: 5432
-  host: dpg-cum83jdumphs738eemc0-a # Este debe ser el host proporcionado por Render
   pool: 5
 
   # For details on connection pooling, see Rails configuration guide
