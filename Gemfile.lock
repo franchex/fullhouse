@@ -81,8 +81,6 @@ GEM
     base64 (0.2.0)
     bcrypt (3.1.20)
     bindex (0.8.1)
-    bootsnap (1.18.4)
-      msgpack (~> 1.2)
     builder (3.3.0)
     capybara (3.40.0)
       addressable
@@ -127,7 +125,6 @@ GEM
     faraday-net_http (3.4.0)
       net-http (>= 0.5.0)
     ffi (1.17.1-x86_64-darwin)
-    ffi (1.17.1-x86_64-linux-gnu)
     font-awesome-sass (6.7.2)
       sassc (~> 2.0)
     globalid (1.2.1)
@@ -159,7 +156,6 @@ GEM
     method_source (1.1.0)
     mini_mime (1.1.5)
     minitest (5.25.4)
-    msgpack (1.8.0)
     multipart-post (2.4.1)
     net-http (0.6.0)
       uri
@@ -174,8 +170,6 @@ GEM
       net-protocol
     nio4r (2.7.4)
     nokogiri (1.18.2-x86_64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.18.2-x86_64-linux-gnu)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     ostruct (0.6.1)
@@ -285,11 +279,9 @@ GEM
 
 PLATFORMS
   x86_64-darwin-23
-  x86_64-linux
 
 DEPENDENCIES
   autoprefixer-rails
-  bootsnap
   capybara
   cloudinary
   debug
