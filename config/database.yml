@@ -39,10 +39,7 @@ production:
   adapter: postgresql
   encoding: unicode
   url: <%= ENV['DATABASE_URL'] %>
-  username: postgresql_full_house_user
-  password: ICRhJ6jRcasgkI7hFOrDJ32fkAzzhqQw
-  port: 5432
-  pool: 5
+   sslmode: require
 
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
