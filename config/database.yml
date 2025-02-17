@@ -39,7 +39,7 @@ production:
   adapter: postgresql
   encoding: unicode
   url: <%= ENV['DATABASE_URL'] %>
-   sslmode: require
+  sslmode: require
 
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
