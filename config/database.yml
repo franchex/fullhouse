@@ -17,23 +17,24 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: 5
 
 development:
   <<: *default
-database: postgresql_full_house_ihj9
+  database: fullhouse_development
+  username: postgres
+  password: <%= ENV['DATABASE_PASSWORD'] %>
 
 test:
   <<: *default
-  database: postgresql_full_house_ihj9_test
+  database: fullhouse_test
+  username: postgres
+  password: <%= ENV['DATABASE_PASSWORD'] %>
 
 production:
-  production:
-    <<: *default
-    adapter: postgresql
-    encoding: unicode
-    url: <%= ENV['DATABASE_URL'] %>
-    pool: 5
+  <<: *default
+  url:
+    <%= ENV['DATABASE_URL'] %>
 
     # For details on connection pooling, see Rails configuration guide
     # https://guides.rubyonrails.org/configuring.html#database-pooling
