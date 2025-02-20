@@ -21,18 +21,11 @@ default: &default
 
 development:
   <<: *default
-
-  encoding: unicode
-
-  username: postgresql_full_house_user
-  password: ICRhJ6jRcasgkI7hFOrDJ32fkAzzhqQw
-  port: 5432
-  host: dpg-cum83jdumphs738eemc0-a.frankfurt-postgres.render.com# Este debe ser el host proporcionado por Render
-  pool: 5
+database: postgresql_full_house_ihj9
 
 test:
   <<: *default
-  database: postgresql_full_house
+  database: postgresql_full_house_ihj9_test
 
 production:
   production:
