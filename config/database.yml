@@ -31,16 +31,16 @@ test:
   username: postgres
   password: <%= ENV['DATABASE_PASSWORD'] %>
 
-production:
-  <<: *default
-  encoding: unicode
-  database: <%= ENV['DATABASE_NAME'] %>
-  username: <%= ENV['DATABASE_USER'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: <%= ENV['DATABASE_HOST'] %>
-  sslmode:
-    require
-
+  production:
+    <<: *default
+    encoding: unicode
+    database: <%= ENV['DATABASE_NAME'] %>
+    username: <%= ENV['DATABASE_USER'] %>
+    password: <%= ENV['DATABASE_PASSWORD'] %>
+    host: <%= ENV['DATABASE_HOST'] %>
+    port: 5432
+    connect_timeout: 30
+    sslmode: require
     # For details on connection pooling, see Rails configuration guide
     # https://guides.rubyonrails.org/configuring.html#database-pooling
 
