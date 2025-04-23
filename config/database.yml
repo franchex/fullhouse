@@ -32,15 +32,15 @@ test:
   password: <%= ENV['DATABASE_PASSWORD'] %>
 
   production:
-    <<: *default
-    encoding: unicode
-    database: <%= ENV['DATABASE_NAME'] %>
-    username: <%= ENV['DATABASE_USER'] %>
-    password: <%= ENV['DATABASE_PASSWORD'] %>
-    host: <%= ENV['DATABASE_HOST'] %>
-    port: 5432
-    connect_timeout: 30
-    sslmode: prefer
+  <<: *default
+  encoding: unicode
+  database: full_full_house
+  username: full_full_house_user
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: dpg-d02lfamuk2gs73ekelvg-a
+  port: 5432
+  connect_timeout: 30
+  sslmode: prefer
     # For details on connection pooling, see Rails configuration guide
     # https://guides.rubyonrails.org/configuring.html#database-pooling
 
