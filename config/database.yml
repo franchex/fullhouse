@@ -21,26 +21,28 @@ default: &default
 
 development:
   <<: *default
+
   database: fullhouse_development
-  username: postgres
+  username: macbook
   password: <%= ENV['DATABASE_PASSWORD'] %>
 
 test:
   <<: *default
   database: fullhouse_test
-  username: postgres
+  username: macbook
   password: <%= ENV['DATABASE_PASSWORD'] %>
 
-  production:
+production:
   <<: *default
   encoding: unicode
-  database: full_full_house
-  username: full_full_house_user
+  database: <%= ENV['DATABASE_NAME'] %>
+  username: <%= ENV['DATABASE_USER'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: dpg-d02lfamuk2gs73ekelvg-a
-  port: 5432
+  host: <%= ENV['DATABASE_HOST'] %>
   connect_timeout: 30
-  sslmode: prefer
+  sslmode:
+    prefer
+
     # For details on connection pooling, see Rails configuration guide
     # https://guides.rubyonrails.org/configuring.html#database-pooling
 
